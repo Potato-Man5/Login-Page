@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Finger Paint' rel='stylesheet'>
+<title> Cat Blog Log-In </title>
+<style>
+
+body {
+background-image: url("catBlogBg.png");
+background-size: 100% 100%;
+background-attachment: fixed;
+}
+
+.titleHeading1 {
+color: #704a4a;
+font-family: 'Finger Paint';
+font-size: 50px;
+}
+
+.titleHeading2 {
+color: #636363;
+font-family: 'Finger Paint';
+font-size: 30px;
+}
+
+
+</style>
+</head>
+
+<body onload="window.alert('Please Enter your Correct Credentials.');">
+<h1><div class="titleHeading1">Maximum Fun Cat Blog</div></h1>
+<h2><div class="titleHeading2">(The Blog For Everything Cats)</div></h2>
+
+<input type="text" id="username" placeholder="Enter your username"><br><br>
+<input type="text" id="password" placeholder="Enter your password"><br><br>
+<button onclick="validatingLogIn()">Submit</button>
+
+<script>
+var myUsername = "GrapeJelly1012";
+var myPassword = "C00lCatWidth9Lives";
+let failedAttempt = 0;
+
+function validatingLogIn() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    while (failedAttempt < 3) { 
+        if (username === myUsername && password === myPassword) {
+            location.replace("https://www.youtube.com/watch?v=FuK0Hfk32W0");
+            break;
+        } else {
+            failedAttempt++;
+            alert("Incorrect Credentials");
+            if (failedAttempt == 3) {
+                alert("Too many attempts.");
+                location.reload();
+            }
+            break; 
+        }
+    }
+}
+
+</script>
+</body>
+</html>
